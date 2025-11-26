@@ -23,10 +23,82 @@ __Algorithm__:
 4. Generate Carrier Signal: Define the carrier signal as a cosine wave. 
 5. Modulate Signal: Apply the AM formula to obtain the modulated signal. 
 6. Plot the Signals: Use Matplotlib to plot the message signal, carrier signal, and modulated signal.
+   
+__Program__:
+```
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameters
+Am = 8.9      # Message amplitude
+Ac = 17.8      # Carrier amplitude
+fm = 550       # Message frequency
+fc = 5500       # Carrier frequency
+fs = 20000      # Sampling frequency (must be high for smooth signal)
+
+t = np.arange(0, 0.01, 1/fs)   # Time vector
+
+# Message Signal
+message = Am * np.cos(2 * np.pi * fm * t)
+
+# Carrier Signal
+carrier = Ac * np.cos(2 * np.pi * fc * t)
+
+# Modulation Index
+m = Am / Ac
+
+# AM Modulated Signal
+am_signal = Ac * (1 + m * np.cos(2 * np.pi * fm * t)) * np.cos(2 * np.pi * fc * t)
+
+# Demodulation (Envelope Detector)
+demodulated = np.abs(am_signal)
+
+# Plotting
+plt.figure(figsize=(12,10))
+
+plt.subplot(4,1,1)
+plt.plot(t, message)
+plt.title("Message Signal")
+plt.xlabel("Time")
+plt.ylabel("Amplitude")
+
+plt.subplot(4,1,2)
+plt.plot(t, carrier)
+plt.title("Carrier Signal")
+plt.xlabel("Time")
+plt.ylabel("Amplitude")
+
+plt.subplot(4,1,3)
+plt.plot(t, am_signal)
+plt.title("AM Modulated Signal")
+plt.xlabel("Time")
+plt.ylabel("Amplitude")
+
+plt.subplot(4,1,4)
+plt.plot(t, demodulated)
+plt.title("Demodulated Signal (Envelope)")
+plt.xlabel("Time")
+plt.ylabel("Amplitude")
+
+plt.tight_layout()
+plt.show()
+```
+__Calculation__:
+<img width="1280" height="963" alt="image" src="https://github.com/user-attachments/assets/0f65429f-0d41-4958-9e5e-e2c30e8a8c80" />
+
+<img width="963" height="1280" alt="image" src="https://github.com/user-attachments/assets/52c7f77b-ee62-413a-8e95-7c5dcc08767d" />
+
 
  __Output__:
+<img width="1189" height="990" alt="image" src="https://github.com/user-attachments/assets/dfefa35f-c507-40a9-b833-8efa8eda4ff7" />
+
 
 
  __Result__:
 
+![WhatsApp Image 2025-11-23 at 07 36 14_86279197](https://github.com/user-attachments/assets/4a51d6ea-49f0-4a1a-b5ea-a482a8153f4a)
 
+ 
+
+
+z
