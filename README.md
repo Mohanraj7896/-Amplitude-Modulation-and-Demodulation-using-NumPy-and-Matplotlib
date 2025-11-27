@@ -95,10 +95,10 @@ __Calculation__:
 
 
  __Result__:
+<img width="1280" height="546" alt="image" src="https://github.com/user-attachments/assets/4fcfa4b8-be01-49cd-a291-0ae32ad4d345" />
 
-![WhatsApp Image 2025-11-23 at 07 36 14_86279197](https://github.com/user-attachments/assets/4a51d6ea-49f0-4a1a-b5ea-a482a8153f4a)
+
 
  
 
 
-z
